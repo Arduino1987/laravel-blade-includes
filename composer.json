@@ -1,0 +1,5 @@
+{
+    "name": "aghorianducalis/laravel-blade-includes",
+    "description": "The set of frequently encountered view includes.",
+    "require": {}
+}
