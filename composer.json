@@ -1,5 +1,25 @@
 {
     "name": "aghorianducalis/laravel-blade-includes",
-    "description": "The set of frequently encountered view includes.",
-    "require": {}
+    "description": "The set of view includes.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Zolotariov",
+            "email": "aghorianducalis@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aghorianducalis\\BladeIncludes\\": "src/"
+        }
+    },
+    "require": {},
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aghorianducalis\\BladeIncludes\\BladeServiceProvider"
+            ]
+        }
+    },
 }
