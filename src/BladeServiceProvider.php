@@ -25,6 +25,12 @@ class BladeServiceProvider extends ServiceProvider
         Blade::component("vendor.$publishedDirectory.breadcrumb", 'breadcrumb');
         Blade::component("vendor.$publishedDirectory.alert_success", 'alertStatus');
         Blade::component("vendor.$publishedDirectory.alert_error", 'alertError');
+
+        // Shorter syntax for alertError: @errorAlert
+        Blade::directive('errorAlert', function () use ($publishedDirectory) {
+            $view_path = "vendor.$publishedDirectory.alert_error";
+            return "<?php echo view('$view_path')->render(); ?>";
+        });
     }
 
     /**
