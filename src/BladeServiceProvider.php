@@ -35,6 +35,7 @@ class BladeServiceProvider extends ServiceProvider
         // @alert with params
         Blade::directive('alert', function ($type = null) use ($publishedDirectory) {
 
+            // TODO: refactor/rework if-logic
             if ($type === 'alert') {
                 $view_path = "vendor.$publishedDirectory.alert_error";
             } elseif ($type === 'success') {
