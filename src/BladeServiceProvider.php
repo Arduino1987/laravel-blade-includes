@@ -31,6 +31,20 @@ class BladeServiceProvider extends ServiceProvider
             $view_path = "vendor.$publishedDirectory.alert_error";
             return "<?php echo view('$view_path')->render(); ?>";
         });
+
+        // @alert with params
+        Blade::directive('alert', function ($type = null) use ($publishedDirectory) {
+
+            if ($type === 'alert') {
+                $view_path = "vendor.$publishedDirectory.alert_error";
+            } elseif ($type === 'success') {
+                $view_path = "vendor.$publishedDirectory.alert_success";
+            } else {
+                $view_path = "vendor.$publishedDirectory.alert_error";
+            }
+
+            return "<?php echo view('$view_path')->render(); ?>";
+        });
     }
 
     /**
